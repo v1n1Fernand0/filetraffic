@@ -11,14 +11,14 @@ namespace FileTraffic.Domain.Entity
     {
         public SystemReference(string name)
         {
-            Name = name;
+            ValidateDomain(name);
         }
 
         public SystemReference(int id,string name)
         {
             DomainExceptionValidation.When(id <= 0,"Invalid Id. id is required");
             Id = id;
-            Name = name;
+            ValidateDomain(name);
         }
 
         public string Name { get; set; }
