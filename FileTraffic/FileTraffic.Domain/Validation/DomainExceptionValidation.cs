@@ -16,13 +16,5 @@ namespace FileTraffic.Domain.Validation
             if (hasError)
                 throw new DomainExceptionValidation(error);
         }
-
-        public static void When(bool hasError, string propretyName, string? error)
-        {
-            if (hasError && !string.IsNullOrEmpty(error))
-                throw new DomainExceptionValidation(error);
-            else 
-                throw new DomainExceptionValidation($"Invalid {propretyName.ToLower()}. {propretyName} is required");
-        }
     }
 }

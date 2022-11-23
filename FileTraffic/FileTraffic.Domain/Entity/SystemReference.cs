@@ -16,7 +16,7 @@ namespace FileTraffic.Domain.Entity
 
         public SystemReference(int id,string name)
         {
-            DomainExceptionValidation.When(id <= 0,"Id",null);
+            DomainExceptionValidation.When(id <= 0,"Invalid Id. id is required");
             Id = id;
             Name = name;
         }
@@ -25,7 +25,7 @@ namespace FileTraffic.Domain.Entity
 
         private void ValidateDomain(string name)
         {
-            DomainExceptionValidation.When(string.IsNullOrEmpty(name),"Name",null);
+            DomainExceptionValidation.When(string.IsNullOrEmpty(name),"Invalid Name. name is required");
             Name = name;
         }
     }

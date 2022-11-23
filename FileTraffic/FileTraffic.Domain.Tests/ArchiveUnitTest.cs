@@ -26,10 +26,10 @@ namespace FileTraffic.Domain.Tests
         [Fact]
         public void CreateArchive_MissingNameValue_DomainExceptionRequiredName()
         {
-            Action action = () => new Archive(-1, "", 20000, ".txt");
+            Action action = () => new Archive(1, "", 20000, ".txt");
             action.Should()
                 .Throw<FileTraffic.Domain.Validation.DomainExceptionValidation>()
-                .WithMessage("Invalid Name.Name is required");
+                .WithMessage("Invalid Name. Name is required");
         }
 
 

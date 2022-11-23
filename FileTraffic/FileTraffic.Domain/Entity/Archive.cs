@@ -16,7 +16,7 @@ namespace FileTraffic.Domain.Entity
 
         public Archive(int id, string name, long size, string extension)
         {
-            DomainExceptionValidation.When(id <= 0,"Id",null);
+            DomainExceptionValidation.When(id <= 0,"Invalid Id. Id is required");
             Id = id;
             ValidateDomain(name, size, extension);
         }
@@ -30,9 +30,9 @@ namespace FileTraffic.Domain.Entity
         private void ValidateDomain(string name, long size, string extension)
         {
             // verificar um tamanho de arquivo máximo para validar posteriormente?
-            DomainExceptionValidation.When(string.IsNullOrEmpty(name), "Name",null);
-            DomainExceptionValidation.When(size <= 0, "Size",null);
-            DomainExceptionValidation.When(string.IsNullOrEmpty(extension),"Extension",null);
+            DomainExceptionValidation.When(string.IsNullOrEmpty(name), "Invalid Name. name is required");
+            DomainExceptionValidation.When(size <= 0, "Invalid Size. size is required");
+            DomainExceptionValidation.When(string.IsNullOrEmpty(extension),"Invalid Extension. extension is required");
 
             Name= name;
             Size= size;
