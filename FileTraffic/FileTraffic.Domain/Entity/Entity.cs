@@ -8,10 +8,10 @@ namespace FileTraffic.Domain.Entity
 {
     public class Entity
     {
-        protected int Id { get; set; }
-        protected DateTime UpdateDate { get; set; }
-        protected DateTime CreateDate { get; set; }
-        protected string? UserUpdater { get; set; }
-        protected string UserCreater { get; set; }
+        public int Id { get; set; }
+        public DateTime UpdateDate { get; set; }
+        public DateTime CreateDate { get; set; }
+        public string? UserUpdater { get; set; }
+        public string UserCreater { get; set; }
     }
 }

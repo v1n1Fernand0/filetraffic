@@ -9,7 +9,7 @@ namespace FileTraffic.Domain.Tests
         [Fact(DisplayName = "Create Archive With Valid State")]
         public void CreateArchive_WithValidParameters_ResultObjectValidState()
         {
-            Action action = () => new Archive(1,"teste.txt", 20000, ".txt");
+            Action action = () => new Archive(1,"teste.txt", 20000,1000, ".txt");
             action.Should()
                  .NotThrow<FileTraffic.Domain.Validation.DomainExceptionValidation>();
         }
@@ -17,7 +17,7 @@ namespace FileTraffic.Domain.Tests
         [Fact]
         public void CreateArchive_NegativeIdValue_DomainExceptionInvalidId()
         {
-            Action action = () => new Archive(-1, "teste.txt", 20000, ".txt");
+            Action action = () => new Archive(-1, "teste.txt", 20000, 1000, ".txt");
             action.Should()
                 .Throw<FileTraffic.Domain.Validation.DomainExceptionValidation>()
                  .WithMessage("Invalid Id. Id is required");
@@ -26,7 +26,7 @@ namespace FileTraffic.Domain.Tests
         [Fact]
         public void CreateArchive_MissingNameValue_DomainExceptionRequiredName()
         {
-            Action action = () => new Archive(1, "", 20000, ".txt");
+            Action action = () => new Archive(1, "", 20000, 1000, ".txt");
             action.Should()
                 .Throw<FileTraffic.Domain.Validation.DomainExceptionValidation>()
                 .WithMessage("Invalid Name. Name is required");
