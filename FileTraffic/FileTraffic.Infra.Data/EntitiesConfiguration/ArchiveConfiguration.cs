@@ -19,7 +19,7 @@ namespace FileTraffic.Infra.Data.EntitiesConfiguration
             builder.Property(x => x.UserCreater).IsRequired();
             builder.Property(x => x.UserUpdater).IsRequired();
             builder.Property(x => x.Extension).IsRequired();
-            builder.HasOne(x => x.System).WithMany(x => x.Archives).HasForeignKey(x => x.Id);
+            builder.HasOne(x => x.Folder).WithMany(x => x.Archives).HasForeignKey(x => x.Id);
         }
     }
 }

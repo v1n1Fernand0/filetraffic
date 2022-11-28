@@ -21,7 +21,7 @@ namespace FileTraffic.Domain.Entity
             ValidateDomain(name);
         }
 
-        public string Name { get; set; }
+        public string? Name { get; set; }
         public string Key { get; set; }
         public IEnumerable<Archive> Archives { get; set; }
 

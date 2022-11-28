@@ -10,43 +10,43 @@ using System.Threading.Tasks;
 
 namespace FileTraffic.Infra.Data.Repositories
 {
-    public class SystemReferenceRepository : ISystemReferenceRepository
+    public class FolderRepository : IFolderRepository
     {
         private readonly ApplicationDbContext _context;
-        public SystemReferenceRepository(ApplicationDbContext context)
+        public FolderRepository(ApplicationDbContext context)
         {
             _context= context;
         }
-        public async Task<Folder> Create(Folder sys)
+        public async Task<Folder> Create(Folder folder)
         {
-            _context.Systems.Add(sys);
+            _context.Folders.Add(folder);
             await _context.SaveChangesAsync();
-            return sys;
+            return folder;
         }
 
         public async Task<Folder> GetById(int? id)
         {
-            var sys = await _context.Systems.FindAsync(id);
-            return sys;
+            var folder = await _context.Folders.FindAsync(id);
+            return folder;
         }
 
         public async Task<IEnumerable<Folder>> GetCategories()
         {
-            return await _context.Systems.ToListAsync();
+            return await _context.Folders.ToListAsync();
         }
 
         public async Task<Folder> Remove(Folder sys)
         {
-            _context.Systems.Remove(sys);
+            _context.Folders.Remove(sys);
             await _context.SaveChangesAsync();
             return sys;
         }
 
-        public async Task<Folder> Update(Folder sys)
+        public async Task<Folder> Update(Folder folder)
         {
-            _context.Systems.Update(sys);
+            _context.Folders.Update(folder);
             await _context.SaveChangesAsync();
-            return sys;
+            return folder;
         }
     }
 }

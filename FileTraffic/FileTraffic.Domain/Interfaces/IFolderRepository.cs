@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace FileTraffic.Domain.Interfaces
 {
-    public interface ISystemReferenceRepository
+    public interface IFolderRepository
     {
         Task<IEnumerable<Folder>> GetCategories();
         Task<Folder> GetById(int? id);
 
-        Task<Folder> Create(Folder sys);
-        Task<Folder> Update(Folder sys);
-        Task<Folder> Remove(Folder sys);
+        Task<Folder> Create(Folder folder);
+        Task<Folder> Update(Folder folder);
+        Task<Folder> Remove(Folder folder);
     }
 }

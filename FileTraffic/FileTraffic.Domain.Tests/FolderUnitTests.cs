@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FileTraffic.Domain.Tests
 {
-    public class SystemReferenceTests
+    public class FolderUnitTests
     {
         [Fact(DisplayName = "Create SystemReference With Valid State")]
         public void CreateSystemReference_WithValidParameters_ResultObjectValidState()

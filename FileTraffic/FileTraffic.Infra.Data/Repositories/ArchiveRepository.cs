@@ -15,24 +15,24 @@ namespace FileTraffic.Infra.Data.Repositories
         private readonly ApplicationDbContext _context;
         public ArchiveRepository(ApplicationDbContext context)
         {
-            _context= context;
+            _context = context;
         }
         public async Task<Archive> Create(Archive archive)
         {
             _context.Archives.Add(archive);
-           await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
             return archive;
         }
 
-        public async Task<Archive> GetById(int? id)
+        public async Task<Archive> GetById(int? id, string key)
         {
-            var archive = await _context.Archives.FindAsync(id);
+            var archive = await _context.Archives.FirstOrDefaultAsync(x => x.Folder.Key.Contains(key) && x.Id == id);
             return archive;
         }
 
-        public async Task<IEnumerable<Archive>> GetCategories()
+        public async Task<IEnumerable<Archive>> GetArchives(string key)
         {
-            return await _context.Archives.ToListAsync();
+            return await _context.Archives.Where(x => x.Folder.Key.Equals(key)).ToListAsync();
         }
 
         public async Task<Archive> Remove(Archive archive)
