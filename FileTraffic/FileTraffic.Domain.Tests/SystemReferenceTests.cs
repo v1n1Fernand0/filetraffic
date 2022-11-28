@@ -13,7 +13,7 @@ namespace FileTraffic.Domain.Tests
         [Fact(DisplayName = "Create SystemReference With Valid State")]
         public void CreateSystemReference_WithValidParameters_ResultObjectValidState()
         {
-            Action action = () => new SystemReference(1,"FileTraffic");
+            Action action = () => new Folder(1,"FileTraffic");
             action.Should()
                  .NotThrow<FileTraffic.Domain.Validation.DomainExceptionValidation>();
         }
@@ -21,7 +21,7 @@ namespace FileTraffic.Domain.Tests
         [Fact(DisplayName = "Create SystemReference With Missing Id")]
         public void CreateSystemReference_NegativeIdValue_DomainExceptionInvalidId()
         {
-            Action action = () => new SystemReference(-1, "FileTraffic");
+            Action action = () => new Folder(-1, "FileTraffic");
             action.Should()
                  .Throw<FileTraffic.Domain.Validation.DomainExceptionValidation>()
                  .WithMessage("Invalid Id. id is required");
@@ -31,7 +31,7 @@ namespace FileTraffic.Domain.Tests
         [Fact(DisplayName = "Create SystemReference With Invalid Name")]
         public void CreateSystemReference_WithInvalidName_ResultObjectValidState()
         {
-            Action action = () => new SystemReference(1, "");
+            Action action = () => new Folder(1, "");
             action.Should()
                  .Throw<FileTraffic.Domain.Validation.DomainExceptionValidation>()
                  .WithMessage("Invalid Name. name is required");

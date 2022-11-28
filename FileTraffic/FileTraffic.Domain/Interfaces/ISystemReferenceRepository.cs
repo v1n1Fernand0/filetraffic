@@ -9,11 +9,11 @@ namespace FileTraffic.Domain.Interfaces
 {
     public interface ISystemReferenceRepository
     {
-        Task<IEnumerable<SystemReference>> GetCategories();
-        Task<SystemReference> GetById(int? id);
+        Task<IEnumerable<Folder>> GetCategories();
+        Task<Folder> GetById(int? id);
 
-        Task<SystemReference> Create(SystemReference sys);
-        Task<SystemReference> Update(SystemReference sys);
-        Task<SystemReference> Remove(SystemReference sys);
+        Task<Folder> Create(Folder sys);
+        Task<Folder> Update(Folder sys);
+        Task<Folder> Remove(Folder sys);
     }
 }

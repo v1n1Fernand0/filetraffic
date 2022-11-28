@@ -17,32 +17,32 @@ namespace FileTraffic.Infra.Data.Repositories
         {
             _context= context;
         }
-        public async Task<SystemReference> Create(SystemReference sys)
+        public async Task<Folder> Create(Folder sys)
         {
             _context.Systems.Add(sys);
             await _context.SaveChangesAsync();
             return sys;
         }
 
-        public async Task<SystemReference> GetById(int? id)
+        public async Task<Folder> GetById(int? id)
         {
             var sys = await _context.Systems.FindAsync(id);
             return sys;
         }
 
-        public async Task<IEnumerable<SystemReference>> GetCategories()
+        public async Task<IEnumerable<Folder>> GetCategories()
         {
             return await _context.Systems.ToListAsync();
         }
 
-        public async Task<SystemReference> Remove(SystemReference sys)
+        public async Task<Folder> Remove(Folder sys)
         {
             _context.Systems.Remove(sys);
             await _context.SaveChangesAsync();
             return sys;
         }
 
-        public async Task<SystemReference> Update(SystemReference sys)
+        public async Task<Folder> Update(Folder sys)
         {
             _context.Systems.Update(sys);
             await _context.SaveChangesAsync();

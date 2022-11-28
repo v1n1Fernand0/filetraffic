@@ -8,10 +8,12 @@ using System.Threading.Tasks;
 
 namespace FileTraffic.Application.DTOs
 {
-    public class SystemReferenceDTO:Entity
+    public class FolderDTO:Entity
     {
         [Required(ErrorMessage = "The Name is Required")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
         public string Key { get; set; }
+
+
     }
 }

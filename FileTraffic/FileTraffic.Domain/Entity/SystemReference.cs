@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace FileTraffic.Domain.Entity
 {
-    public class SystemReference:Entity
+    public class Folder:Entity
     {
-        public SystemReference(string name)
+        public Folder(string name)
         {
             ValidateDomain(name);
         }
 
-        public SystemReference(int id,string name)
+        public Folder(int id,string name)
         {
             DomainExceptionValidation.When(id <= 0,"Invalid Id. id is required");
             Id = id;

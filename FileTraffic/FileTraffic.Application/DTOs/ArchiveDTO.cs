@@ -15,6 +15,6 @@ namespace FileTraffic.Application.DTOs
         public long Size { get; set; }
         public long? FriendlySize { get; set; }
         public string Extension { get; set; }
-        public SystemReference System { get; set; }
+        public Folder Folder { get; set; }
     }
 }

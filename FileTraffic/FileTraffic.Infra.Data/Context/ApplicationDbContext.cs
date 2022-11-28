@@ -17,7 +17,7 @@ namespace FileTraffic.Infra.Data.Context
         }
 
         public DbSet<Archive> Archives { get; set; }
-        public DbSet<SystemReference> Systems { get; set; }
+        public DbSet<Folder> Systems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

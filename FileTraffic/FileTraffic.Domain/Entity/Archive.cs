@@ -26,7 +26,7 @@ namespace FileTraffic.Domain.Entity
         public long Size { get; set; }
         public long? FriendlySize { get; set; }
         public string Extension { get; set; }
-        public SystemReference System { get; set; }
+        public Folder System { get; set; }
 
         private void ValidateDomain(string name, long size, long? friendlySize, string extension)
         {

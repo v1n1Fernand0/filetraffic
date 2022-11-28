@@ -14,7 +14,7 @@ namespace FileTraffic.Application.Mappings
         public DomainToDTOProfile()
         {
             CreateMap<Archive, ArchiveDTO>();
-            CreateMap<SystemReference, SystemReferenceDTO>();
+            CreateMap<Folder, FolderDTO>();
         }
     }
 }

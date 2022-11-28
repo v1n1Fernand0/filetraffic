@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace FileTraffic.Infra.Data.EntitiesConfiguration
 {
-    public class SystemReferenceConfiguration : IEntityTypeConfiguration<SystemReference>
+    public class SystemReferenceConfiguration : IEntityTypeConfiguration<Folder>
     {
-        public void Configure(EntityTypeBuilder<SystemReference> builder)
+        public void Configure(EntityTypeBuilder<Folder> builder)
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Key).IsRequired();
