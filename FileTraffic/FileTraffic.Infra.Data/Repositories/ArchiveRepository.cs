@@ -35,6 +35,11 @@ namespace FileTraffic.Infra.Data.Repositories
             return await _context.Archives.Where(x => x.Folder.Key.Equals(key)).ToListAsync();
         }
 
+        public async Task<IEnumerable<Archive>> GetArchivesIncludingFolder(string key)
+        {
+            return await _context.Archives.Include(x => x.Folder).Where(x => x.Folder.Key.Equals(key)).ToListAsync();
+        }
+
         public async Task<Archive> Remove(Archive archive)
         {
             _context.Archives.Remove(archive);

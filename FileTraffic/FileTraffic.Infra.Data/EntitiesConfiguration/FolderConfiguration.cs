@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace FileTraffic.Infra.Data.EntitiesConfiguration
 {
-    public class SystemReferenceConfiguration : IEntityTypeConfiguration<Folder>
+    public class FolderConfiguration : IEntityTypeConfiguration<Folder>
     {
         public void Configure(EntityTypeBuilder<Folder> builder)
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Key).IsRequired();
-            builder.Property(x => x.Name).HasMaxLength(300).IsRequired();
+            builder.Property(x => x.Name).HasMaxLength(300);
         }
     }
 }

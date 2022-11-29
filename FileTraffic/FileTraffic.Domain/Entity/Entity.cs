@@ -12,6 +12,6 @@ namespace FileTraffic.Domain.Entity
         public DateTime UpdateDate { get; set; }
         public DateTime CreateDate { get; set; }
         public string? UserUpdater { get; set; }
-        public string UserCreater { get; set; }
+        public string? UserCreater { get; set; }
     }
 }

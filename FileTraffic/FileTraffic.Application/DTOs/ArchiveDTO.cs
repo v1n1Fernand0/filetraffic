@@ -11,7 +11,7 @@ namespace FileTraffic.Application.DTOs
     public class ArchiveDTO :Entity
     {
         [Required(ErrorMessage = "The Name is Required")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
         public long Size { get; set; }
         public long? FriendlySize { get; set; }
         public string Extension { get; set; }

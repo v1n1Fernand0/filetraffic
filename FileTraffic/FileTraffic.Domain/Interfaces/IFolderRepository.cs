@@ -9,7 +9,8 @@ namespace FileTraffic.Domain.Interfaces
 {
     public interface IFolderRepository
     {
-        Task<IEnumerable<Folder>> GetCategories();
+        Task<IEnumerable<Folder>> GetFolders();
+        Task<IEnumerable<Folder>> GetFoldersIncludingFiles();
         Task<Folder> GetById(int? id);
 
         Task<Folder> Create(Folder folder);

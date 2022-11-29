@@ -10,6 +10,7 @@ namespace FileTraffic.Domain.Interfaces
     public interface IArchiveRepository
     {
         Task<IEnumerable<Archive>> GetArchives(string folderKey);
+        Task<IEnumerable<Archive>> GetArchivesIncludingFolder(string folderKey);
         Task<Archive> GetById(int? id, string folderKey);
 
         Task<Archive> Create(Archive archive);

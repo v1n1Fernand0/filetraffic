@@ -30,9 +30,14 @@ namespace FileTraffic.Infra.Data.Repositories
             return folder;
         }
 
-        public async Task<IEnumerable<Folder>> GetCategories()
+        public async Task<IEnumerable<Folder>> GetFolders()
         {
             return await _context.Folders.ToListAsync();
+        }
+
+        public async Task<IEnumerable<Folder>> GetFoldersIncludingFiles()
+        {
+            return await _context.Folders.Include(x => x.Archives).ToListAsync();
         }
 
         public async Task<Folder> Remove(Folder sys)

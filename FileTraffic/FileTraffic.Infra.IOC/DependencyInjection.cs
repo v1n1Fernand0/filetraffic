@@ -24,7 +24,7 @@ namespace FileTraffic.Infra.IOC
 
 
             services.AddScoped<IArchiveRepository, ArchiveRepository>();
-            services.AddScoped<IFolderRepository, SystemReferenceRepository>();
+            services.AddScoped<IFolderRepository, FolderRepository>();
             services.AddAutoMapper(typeof(DomainToDTOProfile));
 
             return services;
