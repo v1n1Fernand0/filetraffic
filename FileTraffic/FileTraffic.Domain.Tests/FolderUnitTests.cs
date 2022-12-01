@@ -28,13 +28,13 @@ namespace FileTraffic.Domain.Tests
                  ;
         }
 
-        [Fact(DisplayName = "Create SystemReference With Invalid Name")]
+        [Fact(DisplayName = "Create SystemReference With Invalid Key")]
         public void CreateSystemReference_WithInvalidName_ResultObjectValidState()
         {
             Action action = () => new Folder(1, "");
             action.Should()
                  .Throw<FileTraffic.Domain.Validation.DomainExceptionValidation>()
-                 .WithMessage("Invalid Name. name is required");
+                 .WithMessage("Invalid Key. key is required");
             ;
         }
 

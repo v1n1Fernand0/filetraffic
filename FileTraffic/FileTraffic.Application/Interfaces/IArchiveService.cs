@@ -9,8 +9,8 @@ namespace FileTraffic.Application.Interfaces
 {
     public interface IArchiveService
     {
-        Task<IEnumerable<ArchiveDTO>> GetArchives(string folderKey);
-        Task<ArchiveDTO> GetArchiveById(int? id,string folderKey);
+        Task<IEnumerable<ArchiveDTO>> GetArchives();
+        Task<ArchiveDTO> GetArchiveById(int? id);
         Task Add(ArchiveDTO categoryDto);
         Task Update(ArchiveDTO categoryDto);
         Task Remove(int? id);

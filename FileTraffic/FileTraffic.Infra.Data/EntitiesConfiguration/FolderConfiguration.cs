@@ -15,7 +15,6 @@ namespace FileTraffic.Infra.Data.EntitiesConfiguration
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Key).IsRequired();
-            builder.Property(x => x.Name).HasMaxLength(300);
         }
     }
 }

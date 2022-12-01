@@ -22,7 +22,7 @@ namespace FileTraffic.API.Controllers
         {
             var folders = await _folderService.GetFolder();
             if (folders == null) {
-                return NotFound("There aren't folders in database.");
+                return NotFound("There are not folders in database.");
             }
 
             return Ok(folders);
@@ -34,7 +34,7 @@ namespace FileTraffic.API.Controllers
             var folders = await _folderService.GetFolderById(id);
             if (folders == null)
             {
-                return NotFound("There isn't any folder in database.");
+                return NotFound("There is not any folder in database.");
             }
 
             return Ok(folders);

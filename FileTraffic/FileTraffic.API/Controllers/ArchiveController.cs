@@ -16,21 +16,21 @@ namespace FileTraffic.API.Controllers
         }
 
         [HttpGet("{folderKey}")]
-        public async Task<ActionResult<IEnumerable<ArchiveDTO>>> GetArchives(string folderKey)
+        public async Task<ActionResult<IEnumerable<ArchiveDTO>>> GetArchives()
         {
-            var archives = await _archiveService.GetArchives(folderKey);
+            var archives = await _archiveService.GetArchives();
             if (archives == null)
             {
-                return NotFound($"There aren't archives for the key: {folderKey} in database.");
+                return NotFound($"There are not archives in database.");
             }
 
             return Ok(archives);
         }
 
         [HttpGet("{id},{folderkey}", Name = "GetArchives")]
-        public async Task<ActionResult<ArchiveDTO>> GetArchives(int id,string folderKey)
+        public async Task<ActionResult<ArchiveDTO>> GetArchives(int id)
         {
-            var folders = await _archiveService.GetArchiveById(id,folderKey);
+            var folders = await _archiveService.GetArchiveById(id);
             if (folders == null)
             {
                 return NotFound("There isn't any folder in database.");
@@ -68,9 +68,9 @@ namespace FileTraffic.API.Controllers
         }
 
         [HttpDelete("{id},{fileKey}")]
-        public async Task<ActionResult<FolderDTO>> Delete(int id,string folderkey)
+        public async Task<ActionResult<FolderDTO>> Delete(int id)
         {
-            var archiveDTO = await _archiveService.GetArchiveById(id,folderkey);
+            var archiveDTO = await _archiveService.GetArchiveById(id);
 
             if (archiveDTO == null)
             {
